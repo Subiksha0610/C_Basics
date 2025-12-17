@@ -52,3 +52,4 @@ Hello, world!\n
 Number of line:1
  Number of Words:2
  Number of Character: 16
+*/
