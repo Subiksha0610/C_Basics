@@ -23,3 +23,34 @@ int main() {
 
     return 0;
 }
+
+/*output 
+abaac
+
+: *
+a: ***
+b: *
+c: *
+
+abaac
+
+: *
+ : *
+a: ***
+b: *
+c: *
+
+ghyyujjjjkgtyfrrdgj
+
+: *
+d: *
+f: *
+g: ***
+h: *
+j: *****
+k: *
+r: **
+t: *
+u: *
+y: ***
+*/

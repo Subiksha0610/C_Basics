@@ -19,3 +19,9 @@ int main() {
 
     return 0;
 }
+
+/* output
+A\tB\bC\\
+
+A\t\t\tB\bC\\
+*/

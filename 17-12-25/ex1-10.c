@@ -16,3 +16,13 @@ int main(){
 	}
 return 0;
 }
+
+/* output 
+A       B  c\
+A\tB  c\\
+a               b c\
+a\t\tb c\\
+
+A       B\b  C\\
+A\tB\\b  C\\\\
+*/

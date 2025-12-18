@@ -20,3 +20,19 @@ int main() {
     }
 return 0;
 }
+
+/* output
+Hello   world
+C programming
+Hello
+world
+C
+programming
+
+c is a programming language
+c
+is
+a
+programming
+language
+*/
