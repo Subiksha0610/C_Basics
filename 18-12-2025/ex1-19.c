@@ -37,3 +37,11 @@ void reverse(char s[]) {
         s[j - k] = temp;
     }
 }
+
+/* output
+hello world
+dlrow olleh
+
+c is a programming language
+egaugnal gnimmargorp a si c
+*/
