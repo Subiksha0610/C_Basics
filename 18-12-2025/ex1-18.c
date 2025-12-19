@@ -40,3 +40,14 @@ void rtrim(char s[]) {
         i--;
     s[i + 1] = '\0';
 }
+
+/*Write a program to remove trailing blanks and tabs from each line of input, 
+and to delete entirely blank lines. 
+
+output
+hi
+hi
+
+hi    hi
+hi    hi
+*/
