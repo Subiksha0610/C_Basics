@@ -1,5 +1,8 @@
+/*Write a program to check a C program for rudimentary syntax errors like 
+unmatched parentheses, brackets and braces. Don't forget about quotes, both single and 
+double, escape sequences, and comments. (This program is hard if you do it in full 
+generality.) */
 #include <stdio.h>
-
 int main() {
     int c;
     int paren = 0, bracket = 0, brace = 0;
@@ -52,3 +55,16 @@ int main() {
 
     return 0;
 }
+
+/* output
+#include <stdio.h>
+int main() {
+    int a[5];
+    if (a[0] > 1) {
+        printf("Hello (world)");
+}
+Unmatched parentheses: 1
+
+int main(){ int x=(10+20; return 0; }
+Unmatched braces: 1
+    */
