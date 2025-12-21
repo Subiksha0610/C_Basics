@@ -1,3 +1,8 @@
+/*Write a program to ``fold'' long input lines into two or more shorter lines after 
+the last non-blank character that occurs before the n-th column of input. Make sure your 
+program does something intelligent with very long lines, and if there are no blanks or tabs 
+before the specified column.*/
+
 #include <stdio.h>
 #define MAXCOL 20
 
@@ -32,3 +37,14 @@ int main(void) {
     }
     return 0;
 }
+
+/* output
+hi, i am subiksha from karaikudi.. i'm currently doing my final year computer science and engineering
+hi, i am subiksha
+ from karaikudi..
+ i'm currently
+ doing my final
+ year computer
+ science and
+ engineering
+*/
