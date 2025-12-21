@@ -1,5 +1,6 @@
+/*Write a program to remove all comments from a C program. Don't forget to 
+handle quoted strings and character constants properly. C comments don't nest.  */
 #include <stdio.h>
-
 int main() {
     int c, prev = 0;
     int state = 0;  // 0=normal, 1=comment, 2=string, 3=char
@@ -40,3 +41,11 @@ int main() {
     if (state == 0 && prev) putchar(prev);
     return 0;
 }
+
+
+//output
+//Hello /* remove this */ World
+//Hello  World
+
+//printf("This /* is not */ a comment");
+//printf(This /* is not */ a comment"");
