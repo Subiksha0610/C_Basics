@@ -1,3 +1,5 @@
+/* Write a function rightrot(x,n) that returns the value of the integer x rotated 
+to the right by n positions. */
 #include <stdio.h>
 
 unsigned rightrot(unsigned x, int n) {
@@ -16,3 +18,9 @@ int main() {
     printf("Result: %u\n", result);
     return 0;
 }
+
+/* output
+Enter x: 300
+Enter n: 3
+Result: 2147483685
+*/
