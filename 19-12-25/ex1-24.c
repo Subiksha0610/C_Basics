@@ -12,9 +12,11 @@ int main() {
     while ((c = getchar()) != EOF) {
         if (state == 0) {
             if (c == '/' && prev == '/') {
-                prev = 0;
-                putchar('/');
-                putchar('/');
+                while ((c = getchar()) != '\n' && c != EOF);  
+                prev = 0;          
+                    if (c == '\n')    
+                    putchar('\n');
+                    continue; 
             } else if (c == '*' && prev == '/') {
                 state = 1;
                 prev = 0;
