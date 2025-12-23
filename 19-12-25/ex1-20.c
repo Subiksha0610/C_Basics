@@ -26,3 +26,7 @@ int main(void) {
     }
     return 0;
 }
+/*output
+hello           hi      from    ubuntu  ,
+hello...............hi........from .....ubuntu....,
+*/
