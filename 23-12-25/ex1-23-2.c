@@ -57,7 +57,7 @@ int main() {
 
         else if (state == STRING) {
             putchar(c);
-            if (c == '\\') {          // escape handling
+            if (c == '\\') {          
                 putchar(getchar());
             }
             else if (c == '"') {
@@ -67,7 +67,7 @@ int main() {
 
         else if (state == CHAR) {
             putchar(c);
-            if (c == '\\') {          // escape handling
+            if (c == '\\') {         
                 putchar(getchar());
             }
             else if (c == '\'') {
