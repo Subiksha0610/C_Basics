@@ -1,5 +1,6 @@
+/* Write a program to remove all comments from a C program. Don't forget to 
+handle quoted strings and character constants properly. C comments don't nest.*/
 #include <stdio.h>
-
 #define NORMAL 0
 #define SL_COMMENT 1
 #define ML_COMMENT 2
@@ -77,3 +78,35 @@ int main() {
     }
     return 0;
 }
+
+output
+printf("hello\"hi\"");
+printf("hello\"hi\"");
+
+printf("hello // world");
+printf("hello // world");
+
+//remove
+
+printf('\//hello);
+printf('\//hello);
+
+int a;
+/* comment starts
+int a;
+
+printf("/* not comment */");
+printf("/* not comment */");
+
+char c = '/';
+char c = '/';
+
+int a;/*comment*/ int b=10;
+int a; int b=10;
+
+int a;//comment
+int a;
+
+
+
+
