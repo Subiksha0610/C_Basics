@@ -1,3 +1,6 @@
+/*Write a function htoi(s), which converts a string of hexadecimal digits 
+(including an optional 0x or 0X) into its equivalent integer value. The allowable digits are 0 
+through 9, a through f, and A through F. */
 #include <stdio.h>
 #include <ctype.h>
 
@@ -59,3 +62,54 @@ int main() {
 
     return 0;
 }
+
+/*output
+Enter a hexadecimal number: -1A
+Decimal value = -26
+
+Enter a hexadecimal number: BF0x1
+Error: Enter a valid hexadecimal number
+
+Enter a hexadecimal number: xyz
+Error: Enter a valid hexadecimal number
+
+Enter a hexadecimal number: "0x1f"
+Error: Enter a valid hexadecimal number
+
+Enter a hexadecimal number: 0x1f
+Decimal value = 31
+
+Enter a hexadecimal number:       0x1f
+Decimal value = 31
+
+Enter a hexadecimal number: 10x2
+Error: Enter a valid hexadecimal number
+
+Enter a hexadecimal number: G12
+Error: Enter a valid hexadecimal number
+
+Enter a hexadecimal number: 12G4
+Error: Enter a valid hexadecimal number
+
+Enter a hexadecimal number: ffffff
+Decimal value = 16777215
+
+Enter a hexadecimal number: ffffffff
+Decimal value = -1
+
+Enter a hexadecimal number: f
+Decimal value = 15
+
+Enter a hexadecimal number: aF
+Decimal value = 175
+
+Enter a hexadecimal number: 1A
+Decimal value = 26
+
+Enter a hexadecimal number: 0x
+Error: Enter a valid hexadecimal number
+
+Enter a hexadecimal number:
+
+Error: Enter a valid hexadecimal number
+*/
