@@ -34,3 +34,7 @@ int main(void) {
     }
     return 0;
 }
+/*output
+            hello
+.    hello
+*/
