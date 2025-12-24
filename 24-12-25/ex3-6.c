@@ -1,3 +1,6 @@
+/* Write a version of itoa that accepts three arguments instead of two. The third 
+argument is a minimum field width; the converted number must be padded with blanks on the 
+left if necessary to make it wide enough. */
 #include <stdio.h>
 #include <string.h>
 
@@ -43,3 +46,21 @@ int main() {
     printf("Converted: '%s'\n", s);
     return 0;
 }
+/*output
+
+Enter integer: 42
+Enter minimum width: 5
+Converted: '   42'
+
+Enter integer: -7
+Enter minimum width: 3
+Converted: ' -7'
+
+Enter integer: 1234
+Enter minimum width: 2
+Converted: '1234'
+
+Enter integer: 9
+Enter minimum width: 4
+Converted: '   9'
+*/

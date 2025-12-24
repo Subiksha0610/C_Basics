@@ -1,3 +1,7 @@
+/*Write a function expand(s1,s2) that expands shorthand notations like a-z in 
+the string s1 into the equivalent complete list abc...xyz in s2. Allow for letters of either 
+case and digits, and be prepared to handle cases like a-b-c and a-z0-9 and -a-z. Arrange 
+that a leading or trailing - is taken literally.*/
 #include <stdio.h>
 #include <ctype.h>
 
@@ -26,4 +30,37 @@ int main() {
     printf("%s", s2);
     return 0;
 }
+/*output
+Enter shorthand string: a-b-c
+abc
 
+Enter shorthand string: a-z0-3
+abcdefghijklmnopqrstuvwxyz0123
+
+Enter shorthand string: -abc-
+-abc-
+
+Enter shorthand string: a-b-c
+abc
+
+Enter shorthand string: xyz-
+xyz-
+
+Enter shorthand string: x-z-
+xyz-
+
+Enter shorthand string: -a-c
+-abc
+
+Enter shorthand string: a-c0-3
+abc0123
+
+Enter shorthand string: 0-5
+012345
+
+Enter shorthand string: A-C
+ABC
+
+Enter shorthand string: a-d
+abcd
+*/

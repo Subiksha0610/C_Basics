@@ -1,3 +1,6 @@
+/*Write a function escape(s,t) that converts characters like newline and tab 
+into visible escape sequences like \n and \t as it copies the string t to s. Use a switch.Write 
+a function for the other direction as well, converting escape sequences into the real characters. */
 #include <stdio.h>
 
 void unescape(char s[], char t[]) {
@@ -31,3 +34,9 @@ int main() {
     printf("Unescaped:\n%s", s);
     return 0;
 }
+/*output
+Enter a string with escape sequences: Hello\t\tworld\n
+Unescaped:
+Hello           world
+
+*/

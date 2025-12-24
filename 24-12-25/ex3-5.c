@@ -1,3 +1,6 @@
+/*Write the function itob(n,s,b) that converts the integer n into a base b 
+character representation in the string s. In particular, itob(n,s,16) formats s as a 
+hexadecimal integer in s.*/
 #include <stdio.h>
 #include <string.h>
 
@@ -36,3 +39,20 @@ int main() {
     printf("Converted: %s\n", s);
     return 0;
 }
+/*output
+Enter integer: -42
+Enter base: 10
+Converted: -42
+
+Enter integer: 13
+Enter base: 2
+Converted: 1101
+
+Enter integer: 255
+Enter base: 16
+Converted: FF
+
+Enter integer: 64
+Enter base: 8
+Converted: 100
+*/
