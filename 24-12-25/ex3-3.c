@@ -13,7 +13,6 @@ void expand(char s1[], char s2[]) {
             char prev = s1[i-1];
             char next = s1[i+1];
 
-            // Only expand if both are digits OR both uppercase OR both lowercase
             int valid_range = 0;
             if ((isdigit(prev) && isdigit(next)) ||
                 (isupper(prev) && isupper(next)) ||
@@ -24,11 +23,11 @@ void expand(char s1[], char s2[]) {
                 char start = prev + 1;
                 while (start < next)
                     s2[j++] = start++;
-                continue;  // skip copying '-'
+                continue;  
             }
         }
 
-        // Copy normal character or invalid range literally
+      
         s2[j++] = s1[i];
     }
 
