@@ -5,6 +5,12 @@ hexadecimal integer in s.*/
 #include <string.h>
 
 void itob(int n, char s[], int b) {
+    if (b != 2 && b != 8 && b != 10 && b != 16) {
+        printf("Invalid base. Only 2, 8, 10, 16 allowed.\n");
+        s[0] = '\0';
+        return;
+    }
+
     unsigned int m;
     int i = 0, sign;
 
@@ -21,24 +27,29 @@ void itob(int n, char s[], int b) {
         s[i++] = '-';
 
     s[i] = '\0';
+
     for (int j = 0, k = i - 1; j < k; j++, k--) {
-        char temp = s[j];
-        s[j] = s[k];
-        s[k] = temp;
+        s[j] ^= s[k];
+        s[k] ^= s[j];
+        s[j] ^= s[k];
     }
 }
 
 int main() {
     int n, b;
     char s[100];
-    printf("Enter integer: ");
+
     scanf("%d", &n);
-    printf("Enter base: ");
     scanf("%d", &b);
+
     itob(n, s, b);
-    printf("Converted: %s\n", s);
+
+    if (s[0] != '\0')
+        printf("%s\n", s);
+
     return 0;
 }
+
 /*output
 Enter integer: -42
 Enter base: 10

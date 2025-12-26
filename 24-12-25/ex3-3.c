@@ -8,17 +8,30 @@ that a leading or trailing - is taken literally.*/
 void expand(char s1[], char s2[]) {
     int i, j;
     for (i = j = 0; s1[i] != '\0'; i++) {
-        if (s1[i] == '-' && i > 0 && s1[i+1] != '\0' &&
-            ((isalnum(s1[i-1]) && isalnum(s1[i+1])) &&
-             (s1[i-1] < s1[i+1]))) {
-            char start = s1[i-1] + 1;
-            char end = s1[i+1];
-            while (start < end)
-                s2[j++] = start++;
-        } else {
-            s2[j++] = s1[i];
+
+        if (s1[i] == '-' && i > 0 && s1[i+1] != '\0') {
+            char prev = s1[i-1];
+            char next = s1[i+1];
+
+            // Only expand if both are digits OR both uppercase OR both lowercase
+            int valid_range = 0;
+            if ((isdigit(prev) && isdigit(next)) ||
+                (isupper(prev) && isupper(next)) ||
+                (islower(prev) && islower(next)))
+                valid_range = 1;
+
+            if (valid_range && prev < next) {
+                char start = prev + 1;
+                while (start < next)
+                    s2[j++] = start++;
+                continue;  // skip copying '-'
+            }
         }
+
+        // Copy normal character or invalid range literally
+        s2[j++] = s1[i];
     }
+
     s2[j] = '\0';
 }
 
@@ -26,10 +39,13 @@ int main() {
     char s1[100], s2[500];
     printf("Enter shorthand string: ");
     fgets(s1, sizeof(s1), stdin);
+
     expand(s1, s2);
-    printf("%s", s2);
+
+    printf("Expanded: %s\n", s2);
     return 0;
 }
+
 /*output
 Enter shorthand string: a-b-c
 abc

@@ -5,14 +5,16 @@ measure the difference in run-time. */
 
 int binsearch(int x, int v[], int n) {
     int low = 0, high = n - 1, mid;
-    while (low <= high) {
+    if(n<=0)
+    return -1;
+    while (low <high) {
         mid = (low + high) / 2;
-        if (x < v[mid])
-            high = mid - 1;
+        if (x <= v[mid])
+            high = mid;
         else
             low = mid + 1;
-        if (v[mid] == x)
-            return mid;
+        if (v[low] == x)
+            return low;
     }
     return -1;
 }
