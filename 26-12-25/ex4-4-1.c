@@ -1,6 +1,5 @@
 /*Add the commands to print the top elements of the stack without popping, to 
-duplicate it, and to swap the top two elements. Add a command to clear the stack.  
-*/
+duplicate it, and to swap the top two elements. Add a command to clear the stack. */
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
@@ -109,3 +108,45 @@ int main(void) {
     }
     return 0;
 }
+/*output
+Stack commands:
+number  push
+?       print top
+d       duplicate top
+s       swap top two
+c       clear stack
+p       pop
+q       quit
+> ?
+Error: stack empty
+> 7
+> 6
+> 5
+> 4
+> ?
+Top: 4
+> d
+> s
+> ?
+Top: 4
+> p
+Popped: 4
+> ?
+Top: 4
+> p
+Popped: 4
+> ?
+Top: 5
+> s
+> ?
+Top: 6
+> d
+> p
+Popped: 6
+> ?
+Top: 6
+> c
+Stack cleared
+> ?
+Error: stack empty
+*/

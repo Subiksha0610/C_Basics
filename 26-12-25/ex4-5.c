@@ -61,11 +61,11 @@ int main(void) {
     char cmd[20];
     double a, b;
 
-    printf("Edge-case safe stack calculator\n");
+    printf("stack calculator\n");
 
     while (1) {
         printf("> ");
-        if (scanf("%19s", cmd) != 1)
+        if (scanf("%s", cmd) != 1)
             break;
 
         if (sscanf(cmd, "%lf", &a) == 1) {
@@ -120,3 +120,69 @@ int main(void) {
 
     return 0;
 }
+/*output
+stack calculator
+> 5
+> 3
+> +
+> p
+Popped: 8
+> 10
+> 4
+> _
+Unknown command
+> 10
+> 4
+> -
+> p
+Popped: 6
+> 10
+> /
+> 0
+
+> 10
+> 0
+> /
+Error: division by zero
+> 8
+> 0
+> %
+Error: modulus by zero
+> +
+Error: stack empty
+> 5
+> d
+> ?
+Top: 5
+
+> 5
+> d
+> ?
+Top: 5
+> 3
+> s
+> p
+Popped: 5
+> 0
+> sin
+> p
+Popped: 0
+> 2
+> exp
+> p
+Popped: 7.38906
+> 2
+> 3
+> pow
+> p
+Popped: 8
+> 9
+> 4
+> c
+Stack cleared
+> ?
+Stack empty
+> hello
+Unknown command
+> q
+*/

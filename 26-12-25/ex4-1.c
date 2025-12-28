@@ -40,3 +40,32 @@ int main() {
 
     return 0;
 }
+/* output
+Enter main string: hello hello
+Enter substring: lo
+Rightmost occurrence index: 9
+
+Enter main string: hello
+Enter substring: world
+Substring not found
+
+Enter main string: computer
+Enter substring: put
+Rightmost occurrence index: 3
+
+Enter main string: abcd
+Enter substring: cd
+Rightmost occurrence index: 2
+
+Enter main string: hello
+Enter substring:
+Substring not found
+
+Enter main string: hi
+Enter substring: hello
+Substring not found
+
+Enter main string:
+Enter substring:
+Rightmost occurrence index: 0
+*/
