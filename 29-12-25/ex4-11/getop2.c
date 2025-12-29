@@ -3,11 +3,14 @@
 #include "calc.h"
 
 int getop(char s[]) {
-    static int lastc = ' ';
+    static int buf = EOF;
     int c, i = 0;
 
-    c = (lastc != ' ') ? lastc : getchar();
-    lastc = ' ';
+    if (buf != EOF) {
+        c = buf;
+        buf = EOF;
+    } else
+        c = getchar();
 
     while (c == ' ' || c == '\t')
         c = getchar();
@@ -24,7 +27,7 @@ int getop(char s[]) {
     if (c == '-') {
         int next = getchar();
         if (!isdigit(next) && next != '.') {
-            lastc = next;
+            buf = next;
             return '-';
         }
         s[++i] = next;
@@ -32,7 +35,7 @@ int getop(char s[]) {
     }
 
     while (isdigit(c = getchar()))
-        s[++i] = c;
+     s[++i] = c;
 
     if (c == '.') {
         s[++i] = c;
@@ -41,6 +44,7 @@ int getop(char s[]) {
     }
 
     s[++i] = '\0';
-    lastc = c;
+    buf = c;
+
     return NUMBER;
 }

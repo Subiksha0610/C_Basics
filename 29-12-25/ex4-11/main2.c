@@ -1,3 +1,5 @@
+/*Exercise 4-11. Modify getop so that it doesn't need to use ungetch. Hint: use an internal 
+static variable.  */
 #include <stdio.h>
 #include <stdlib.h>
 #include "calc.h"
@@ -13,32 +15,53 @@ int main(void) {
 
         case NUMBER:
             push(atof(s));
-            error = 0;
             break;
 
         case '+':
-            push(pop() + pop());
-            break;
+    if (stacksize() < 2) {
+        printf("error: stack empty\n");
+        clearstack();
+        error = 1;
+    } else
+        push(pop() + pop());
+    break;
 
-        case '*':
-            push(pop() * pop());
-            break;
+case '-':
+    if (stacksize() < 2) {
+        printf("error: stack empty\n");
+        clearstack();
+        error = 1;
+    } else {
+        op2 = pop();
+        push(pop() - op2);
+    }
+    break;
+    case '*':
+    if (stacksize() < 2) {
+        printf("error: stack empty\n");
+        clearstack();
+        error = 1;
+    } else
+        push(pop() * pop());
+    break;
 
-        case '-':
-            op2 = pop();
-            push(pop() - op2);
-            break;
+case '/':
+    if (stacksize() < 2) {
+        printf("error: stack empty\n");
+        clearstack();
+        error = 1;
+    } else {
+        op2 = pop();
+        if (op2 != 0.0)
+            push(pop() / op2);
+        else {
+            printf("error: zero divisor\n");
+            clearstack();
+            error = 1;
+        }
+    }
+    break;
 
-        case '/':
-            op2 = pop();
-            if (op2 != 0.0)
-                push(pop() / op2);
-            else {
-                printf("error: zero divisor\n");
-                clearstack();
-                error = 1;
-            }
-            break;
 
         case '\n':
             if (!error)
@@ -49,9 +72,25 @@ int main(void) {
         default:
             printf("error: unknown command %s\n", s);
             clearstack();
-            error = 1;
+             error = 1;
             break;
         }
     }
     return 0;
 }
+/*output
+3 4 +
+        7
+10 2 -
+        8
+-5 3 *
+        -15
+5 0 /
+error: zero divisor
+7 +
+error: stack empty
+5 0 /
+error: zero divisor
+9 - 8
+error: stack empty
+*/

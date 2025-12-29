@@ -1,3 +1,5 @@
+/*Exercise 4-7. Write a routine ungets(s) that will push back an entire string onto the input. 
+Should ungets know about buf and bufp, or should it just use ungetch? */
 #include <stdio.h>
 #include <string.h>
 
@@ -19,22 +21,25 @@ int ungetch(int c) {
 
 int ungets(const char *s) {
     int len;
-
     if (s == NULL)
         return 0;
-
     len = strlen(s);
-    while (len > 0) {
-        if (!ungetch(s[--len]))
-            return 0;
-    }
+    if (len > BUFSIZE - bufp)
+        return 0;
+    while (len > 0)
+        ungetch(s[--len]);
     return 1;
 }
 
 int main(void) {
     char c;
 
+    printf("Example 1: Push back string 'hello\\n'\n");
     ungets("hello\n");
+    while ((c = getch()) != EOF)
+        putchar(c);
+
+    printf("Example 2: User input \n");
     while ((c = getch()) != EOF)
         putchar(c);
 

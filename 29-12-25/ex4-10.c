@@ -1,3 +1,5 @@
+/*Exercise 4-10. An alternate organization uses getline to read an entire input line; this makes 
+getch and ungetch unnecessary. Revise the calculator to use this approach.  */
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
@@ -36,36 +38,35 @@ int getline_custom(char line[], int lim) {
     int c, i = 0;
     while (i < lim - 1 && (c = getchar()) != EOF && c != '\n')
         line[i++] = c;
-    if (c == '\n')
-        line[i++] = c;
     line[i] = '\0';
     return i;
 }
 
 int getop(char line[], int *pos, char s[]) {
     int i = 0;
+
     while (line[*pos] == ' ' || line[*pos] == '\t')
         (*pos)++;
 
     if (line[*pos] == '\0')
         return '\0';
 
-    s[i++] = line[*pos];
-
-    if (!isdigit(line[*pos]) && line[*pos] != '.' && line[*pos] != '-') {
-        (*pos)++;
-        s[i] = '\0';
-        return s[0];
-    }
-
     if (line[*pos] == '-' && !isdigit(line[*pos + 1]) && line[*pos + 1] != '.') {
+        s[0] = '-';
+        s[1] = '\0';
         (*pos)++;
-        s[i] = '\0';
         return '-';
     }
 
-    if (line[*pos] == '-' || isdigit(line[*pos]))
-        s[i++] = line[++(*pos)];
+    if (!isdigit(line[*pos]) && line[*pos] != '.' && line[*pos] != '-') {
+        s[0] = line[*pos];
+        s[1] = '\0';
+        (*pos)++;
+        return s[0];
+    }
+
+    if (line[*pos] == '-')
+        s[i++] = line[(*pos)++];
 
     while (isdigit(line[*pos]))
         s[i++] = line[(*pos)++];
@@ -85,8 +86,6 @@ int main(void) {
     char token[MAXLINE];
     int type, pos;
     double op2;
-
-    printf("Enter RPN expressions (Ctrl+D to quit)\n");
 
     while (getline_custom(line, MAXLINE) > 0) {
         pos = 0;
@@ -125,9 +124,6 @@ int main(void) {
                     }
                     break;
 
-                case '\n':
-                    break;
-
                 default:
                     printf("error: invalid token '%s'\n", token);
                     break;
@@ -137,8 +133,20 @@ int main(void) {
         if (sp == 1)
             printf("Result: %.8g\n", pop());
         else if (sp > 1)
-            printf("error: too many operands left on stack\n");
+            printf("error: too many operands\n");
     }
 
     return 0;
 }
+/*output
+4 0 /
+error: division by zero
+9 -
+error: not enough operands
+4 5 +
+Result: 9
+5 7 *
+Result: 35
+5 3 -
+Result: 2
+*/
