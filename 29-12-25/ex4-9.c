@@ -32,13 +32,5 @@ int main(void) {
     return 0;
 }
 /*output
-Enter text:
-hello world
-hello world
-
-123
-123
-
-y
-y
+X
 */

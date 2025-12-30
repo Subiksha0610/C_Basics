@@ -34,12 +34,7 @@ int ungets(const char *s) {
 int main(void) {
     char c;
 
-    printf("Example 1: Push back string 'hello\\n'\n");
     ungets("hello\n");
-    while ((c = getch()) != EOF)
-        putchar(c);
-
-    printf("Example 2: User input \n");
     while ((c = getch()) != EOF)
         putchar(c);
 

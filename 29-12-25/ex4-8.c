@@ -31,11 +31,5 @@ int main(void) {
         putchar(c);
     }
 
-    printf("\nExample 2: User input \n");
-
-    while ((c = getch()) != EOF) {
-        putchar(c);
-    }
-
     return 0;
 }
