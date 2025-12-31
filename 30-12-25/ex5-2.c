@@ -1,3 +1,5 @@
+/* Write getfloat, the floating-point analog of getint. What type does 
+getfloat return as its function value? */
 #include <stdio.h>
 #include <ctype.h>
 
@@ -87,3 +89,24 @@ int main(void) {
     }
     return 0;
 }
+
+/*output
++.
+
+-.
+
+.5
+Read float: 0.500000
+
+5.
+Read float: 5.000000
+
++12.34
+Read float: 12.340000
+
+-0.75
+Read float: -0.750000
+
+abc
+
+*/

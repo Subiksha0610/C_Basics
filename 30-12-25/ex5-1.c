@@ -1,3 +1,5 @@
+/*As written, getint treats a + or - not followed by a digit as a valid 
+representation of zero. Fix it to push such a character back on the input.  */
 #include <stdio.h>
 #include <ctype.h>
 
@@ -67,3 +69,20 @@ int main(void) {
     }
     return 0;
 }
+/*output
++
+
+-
+
++a
+
+++5
+
+-EOF
+
++123
+Read integer: 123
+
+-456
+Read integer: -456
+*/

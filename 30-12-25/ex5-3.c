@@ -1,3 +1,5 @@
+/*Write a pointer version of the function strcat that we showed in Chapter 2
+strcat(s,t) copies the string t to the end of s. */
 #include <stdio.h>
 
 void strcatp(char *s, char *t, int size) {
@@ -46,3 +48,9 @@ int main(void) {
 
     return 0;
 }
+/*output
+Hello World
+C programming is powerful
+HiEveryon
+Test
+*/
