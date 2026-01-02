@@ -1,0 +1,64 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#define DEFAULT_TAB 8
+#define MAXTABS 100
+
+int tabstops[MAXTABS];
+int ntabs = 0;
+
+int next_tabstop(int col) {
+    if (ntabs == 0)
+        return ((col / DEFAULT_TAB) + 1) * DEFAULT_TAB;
+    for (int i = 0; i < ntabs; i++)
+        if (tabstops[i] > col)
+            return tabstops[i];
+    return ((col / DEFAULT_TAB) + 1) * DEFAULT_TAB;
+}
+
+int main(int argc, char *argv[]) {
+    int c, col = 0, spacecount = 0;
+
+    for (int i = 1; i < argc && ntabs < MAXTABS; i++) {
+        int t = atoi(argv[i]);
+        if (t > 0)
+            tabstops[ntabs++] = t;
+    }
+
+    for (int i = 0; i < ntabs - 1; i++)
+        for (int j = i + 1; j < ntabs; j++)
+            if (tabstops[i] > tabstops[j]) {
+                int tmp = tabstops[i];
+                tabstops[i] = tabstops[j];
+                tabstops[j] = tmp;
+            }
+
+    while ((c = getchar()) != EOF) {
+        if (c == ' ') {
+            spacecount++;
+            if (col + spacecount == next_tabstop(col)) {
+                putchar('\t');
+                col += spacecount;
+                spacecount = 0;
+            }
+        } else {
+            while (spacecount > 0) {
+                putchar(' ');
+                col++;
+                spacecount--;
+            }
+            if (c == '\n') {
+                putchar(c);
+                col = 0;
+            } else {
+                putchar(c);
+                col++;
+            }
+        }
+    }
+
+    while (spacecount-- > 0)
+        putchar(' ');
+
+    return 0;
+}

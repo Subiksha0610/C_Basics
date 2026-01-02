@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define MAXLINES 1000
+#define MAXLEN 1000
+#define DEFAULT_N 10
+
+char *lineptr[MAXLINES];
+
+int main(int argc, char *argv[]) {
+    int n = DEFAULT_N;
+    int i, len, count = 0;
+    char line[MAXLEN];
+
+    if (argc == 2 && argv[1][0] == '-') {
+        n = atoi(argv[1] + 1);
+    } else if (argc == 3 && strcmp(argv[1], "-n") == 0) {
+        n = atoi(argv[2]);
+    }
+
+    if (n <= 0)
+        n = DEFAULT_N;
+
+    while (fgets(line, MAXLEN, stdin) != NULL) {
+        len = strlen(line);
+        char *p = malloc(len + 1);
+        if (p == NULL)
+            return 1;
+        strcpy(p, line);
+
+        if (count < MAXLINES) {
+            lineptr[count] = p;
+        } else {
+            free(lineptr[count % MAXLINES]);
+            lineptr[count % MAXLINES] = p;
+        }
+        count++;
+    }
+
+    if (count == 0)
+        return 0;
+
+    if (n > count)
+        n = count;
+
+    int start = count - n;
+
+    for (i = start; i < count; i++)
+        printf("%s", lineptr[i % MAXLINES]);
+
+    for (i = 0; i < MAXLINES && i < count; i++)
+        free(lineptr[i]);
+
+    return 0;
+}

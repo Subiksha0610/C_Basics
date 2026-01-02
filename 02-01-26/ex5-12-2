@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#define DEFAULT_TAB 8
+
+int m_start = 0;
+int n_interval = DEFAULT_TAB;
+
+int next_tabstop(int col) {
+    if (col < m_start)
+        return m_start;
+    return m_start + ((col - m_start) / n_interval + 1) * n_interval;
+}
+
+int main(int argc, char *argv[]) {
+    int c, col = 0, spacecount = 0;
+
+    for (int i = 1; i < argc; i++) {
+        if (argv[i][0] == '-' && atoi(argv[i] + 1) >= 0)
+            m_start = atoi(argv[i] + 1);
+        else if (argv[i][0] == '+' && atoi(argv[i] + 1) > 0)
+            n_interval = atoi(argv[i] + 1);
+    }
+
+    if (n_interval <= 0)
+        n_interval = DEFAULT_TAB;
+
+    while ((c = getchar()) != EOF) {
+        if (c == ' ') {
+            spacecount++;
+            if (col + spacecount == next_tabstop(col)) {
+                putchar('\t');
+                col += spacecount;
+                spacecount = 0;
+            }
+        } else {
+            while (spacecount > 0) {
+                putchar(' ');
+                col++;
+                spacecount--;
+            }
+            if (c == '\n') {
+                putchar(c);
+                col = 0;
+            } else {
+                putchar(c);
+                col++;
+            }
+        }
+    }
+
+    while (spacecount-- > 0)
+        putchar(' ');
+
+    return 0;
+}
