@@ -1,3 +1,5 @@
+/*Rewrite readlines to store lines in an array supplied by main, rather than 
+calling alloc to maintain storage. How much faster is the program? */
 #include <stdio.h>
 #include <string.h>
 
@@ -71,3 +73,18 @@ int getline_ptr(char *s, int lim) {
 
     return s - start;
 }
+/*output
+apple
+banana
+cherry
+
+apple
+banana
+cherry
+
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+hello
+hello
+*/

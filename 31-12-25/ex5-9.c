@@ -1,3 +1,5 @@
+/*Rewrite the routines day_of_year and month_day with pointers instead of 
+indexing. */
 #include <stdio.h>
 
 static char daytab[2][13] = {
@@ -72,3 +74,11 @@ int main(void) {
 
     return 0;
 }
+/*output
+60
+-1
+0
+2 29
+-1
+-1
+*/

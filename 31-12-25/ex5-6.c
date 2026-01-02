@@ -1,3 +1,6 @@
+/*Rewrite appropriate programs from earlier chapters and exercises with pointers 
+instead of array indexing. Good possibilities include getline atoi, itoa, 
+and their variants ,reverse */
 #include <stdio.h>
 
 #define MAXLINE 1000
@@ -39,3 +42,16 @@ int main(void) {
 
     return 0;
 }
+/*output
+Hello World
+Length: 12 | Line: Hello World
+
+
+Length: 1 | Line:
+
+aaaaaaaaaaaaa
+Length: 14 | Line: aaaaaaaaaaaaa
+
+Hello
+Length: 6 | Line: Hello
+*/

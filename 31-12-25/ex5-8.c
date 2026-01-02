@@ -1,3 +1,4 @@
+/* There is no error checking in day_of_year or month_day. Remedy this defect.  */
 #include <stdio.h>
 
 static char daytab[2][13] = {
@@ -69,3 +70,11 @@ int main(void) {
 
     return 0;
 }
+/*output
+60
+-1
+0
+2 29
+-1
+-1
+*/
