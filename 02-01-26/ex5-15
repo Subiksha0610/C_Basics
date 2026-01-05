@@ -1,3 +1,5 @@
+/*. Add the option -f to fold upper and lower case together, so that case 
+distinctions are not made during sorting; for example, a and A compare equal.  */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -107,3 +109,57 @@ int main(int argc, char *argv[]) {
 
     return 0;
 }
+/*output
+subiksha@DESKTOP-CBQDRR5:~$ ./ex5-15
+Banana
+apple
+Cherry
+10
+2
+
+
+10
+2
+Banana
+Cherry
+apple
+subiksha@DESKTOP-CBQDRR5:~$ ./ex5-15 -f
+Banana
+apple
+Cherry
+10
+2
+
+
+10
+2
+apple
+Banana
+Cherry
+subiksha@DESKTOP-CBQDRR5:~$ ./ex5-15 -n
+Banana
+apple
+Cherry
+10
+2
+
+Banana
+apple
+Cherry
+
+2
+10
+subiksha@DESKTOP-CBQDRR5:~$ ./ex5-15 -nr
+Banana
+apple
+Cherry
+10
+2
+
+10
+2
+Banana
+apple
+Cherry
+
+*/

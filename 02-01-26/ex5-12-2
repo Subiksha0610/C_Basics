@@ -1,3 +1,8 @@
+/* Extend entab to accept the shorthand  
+   entab -m +n 
+to mean tab stops every n columns, starting at column m. Choose convenient (for the user) 
+default behavior.  
+*/
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -54,3 +59,9 @@ int main(int argc, char *argv[]) {
 
     return 0;
 }
+/*subiksha@DESKTOP-CBQDRR5:~$ ./ex5-12-2 -4 +6
+hi hello            from                       ubuntu
+hi hello                    from                                 ubuntu
+subiksha@DESKTOP-CBQDRR5:~$ ./ex5-12-2
+hi                   helloo                          from       ubuntu
+hi                   helloo                          from       ubuntu*/

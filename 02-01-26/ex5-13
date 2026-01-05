@@ -1,3 +1,11 @@
+/* Write the program tail, which prints the last n lines of its input. By default, n 
+is set to 10, let us say, but it can be changed by an optional argument so that  
+   tail -n 
+prints the last n lines. The program should behave rationally no matter how unreasonable the 
+input or the value of n. Write the program so it makes the best use of available storage; lines 
+should be stored as in the sorting program of Section 5.6
+, not in a two-dimensional array of 
+fixed size.*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -54,3 +62,27 @@ int main(int argc, char *argv[]) {
 
     return 0;
 }
+/*output
+subiksha@DESKTOP-CBQDRR5:~$ ./ex5-13
+l1
+l2
+l3
+l4
+l5
+l1
+l2
+l3
+l4
+l5
+subiksha@DESKTOP-CBQDRR5:~$ ./ex5-13 -3
+l1
+l2
+l3
+l4
+l5
+l6
+
+l5
+l6
+
+*/

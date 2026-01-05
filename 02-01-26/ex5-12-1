@@ -1,3 +1,8 @@
+/* Extend detab to accept the shorthand  
+   -m +n 
+to mean tab stops every n columns, starting at column m. Choose convenient (for the user) 
+default behavior.  
+*/
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -42,3 +47,17 @@ int main(int argc, char *argv[]) {
     }
     return 0;
 }
+/*output
+subiksha@DESKTOP-CBQDRR5:~$ ./ex5-12-1
+a      b
+a      b
+a        b
+a        b
+subiksha@DESKTOP-CBQDRR5:~$ ./ex5-12-1 -4 +6
+a      b
+a      b
+a          b
+a          b
+hi from    ubuntu               hello
+hi from    ubuntu           hello
+*/

@@ -1,3 +1,5 @@
+/*Modify the program detab 
+accept a list of tab stops as arguments. Use the default tab settings if there are no arguments.  */
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -50,3 +52,22 @@ int main(int argc, char *argv[]) {
     }
     return 0;
 }
+/*output
+a       b
+a       b
+a\tb
+a\tb
+abcdef                          bhj
+abcdef                          bhj
+aaa       b
+aaa       b
+a               mj
+a               mj
+subiksha@DESKTOP-CBQDRR5:~$ ./ex5-11-1 4 10 20
+a       b h jknk
+a   b h jknk
+hello hi from ubuntu
+hello hi from ubuntu
+hii              from ug=buntu          df
+hii        from ug=buntu                df
+*/

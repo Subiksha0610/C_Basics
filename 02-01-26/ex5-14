@@ -1,3 +1,5 @@
+/* Modify the sort program to handle a -r flag, which indicates sorting in reverse 
+(decreasing) order. Be sure that -r works with -n.  */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -87,3 +89,24 @@ int main(int argc, char *argv[]) {
 
     return 0;
 }
+/*output
+subiksha@DESKTOP-CBQDRR5:~$ ./ex5-14 -n
+10
+5
+20
+1
+1
+5
+10
+20
+subiksha@DESKTOP-CBQDRR5:~$ ./ex5-14 -nr
+10
+5
+20
+1
+
+20
+10
+5
+1
+*/

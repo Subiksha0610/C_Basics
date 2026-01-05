@@ -1,3 +1,5 @@
+/*Modify the program entab 
+accept a list of tab stops as arguments. Use the default tab settings if there are no arguments.  */
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -62,3 +64,17 @@ int main(int argc, char *argv[]) {
 
     return 0;
 }
+/*output
+subiksha@DESKTOP-CBQDRR5:~$ ./ex5-11-2
+a     b                cgh
+a     b                cgh
+a        b      hjjkl         s
+a        b      hjjkl         s
+subiksha@DESKTOP-CBQDRR5:~$ ./ex5-11-2 4 10 20
+hi hello        from ubuntu      hello
+hi hello        from ubuntu       hello
+hi hi
+hi hi
+hi hellooo  ubuntooo      567899765434566789                89
+hi hellooo  ubuntooo      567899765434566789                89
+*/
