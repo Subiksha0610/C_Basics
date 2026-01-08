@@ -1,3 +1,6 @@
+/*Exercise 6-1. Our version of getword does not properly handle underscores, string constants, 
+comments, or preprocessor control lines. Write a better version.  
+*/
 #include <stdio.h>
 #include <ctype.h>
 
@@ -97,3 +100,56 @@ int main(void) {
 
     return 0;
 }
+/*output
+#define MAX 100 \
++20
+Token: #
+
+int main(){
+Token: int
+Token: main
+Token: (
+Token: )
+Token: {
+
+int_count=10;
+Token: int_count
+Token: =
+Token: 1
+Token: 0
+Token: ;
+
+char c='\n';
+Token: char
+Token: c
+Token: =
+Token: '\n'
+Token: ;
+
+char *s="Hello \ "world\" ";
+Token: char
+Token: *
+Token: s
+Token: =
+Token: "Hello \ "
+Token: world
+Token: \
+Token: " "
+Token: ;
+
+char *s="Hello \"World\"";
+Token: char
+Token: *
+Token: s
+Token: =
+Token: "Hello \"World\""
+Token: ;
+
+}
+Token: }
+
+// this is single line comment
+
+/*multi line comment*/
+
+*/
