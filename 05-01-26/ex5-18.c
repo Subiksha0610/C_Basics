@@ -23,6 +23,7 @@ int main(void) {
     while (gettoken() != EOF) {
         errorflag = 0;
         strcpy(datatype, token);
+        gettoken();
         out[0] = '\0';
         name[0] = '\0';
         dcl();
