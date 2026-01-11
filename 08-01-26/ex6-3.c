@@ -1,3 +1,6 @@
+/*Exercise 6-3. Write a cross-referencer that prints a list of all words in a document, and for 
+each word, a list of the line numbers on which it occurs. Remove noise words like ``the,'' 
+``and,'' and so on.  */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -168,3 +171,44 @@ int main(void) {
     treeprint(root);
     return 0;
 }
+/*output
+
+This is a test.
+This test is simple.
+is: 1 2
+simple: 2
+test: 1 2
+this: 1 2
+
+The cat and the dog are in the house.
+The dog is on the mat.
+are: 1
+cat: 1
+dog: 1 2
+house: 1
+is: 2
+mat: 2
+
+Hello hello HELLO
+Hello again
+again: 4
+hello: 1 2 3
+
+int main() {
+    int a = 10; // this is a comment
+    int b = a;  /* multi
+                  line comment */                          /*
+}
+b: 3
+int: 1 2 3
+main: 1
+
+printf("this is a test");
+char c = 'a';
+test again
+again: 4
+c: 2
+char: 2
+printf: 1
+test: 3
+*/

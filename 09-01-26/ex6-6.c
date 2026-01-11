@@ -1,3 +1,6 @@
+/*Exercise 6-6. Implement a simple version of the #define processor (i.e., no arguments) 
+suitable for use with C programs, based on the routines of this section. You may also find 
+getch and ungetch helpful. */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -108,3 +111,29 @@ int main(void) {
     }
     return 0;
 }
+/*output
+subiksha@DESKTOP-CBQDRR5:~$ ./ex6-6
+#define PI THREE PI
+THREE
+
+#define HELLO HI HELLO WORLD
+HIWORLD
+
+#define A ONE #define B TWO A B
+ONETWO
+
+#define X OLD #define X NEW X
+NEW
+
+VALUE
+VALUE
+
+#define EMPTY EMPTY
+
+
+#define CAT DOG THE CAT RUNS
+THEDOGRUNS
+
+#define A ONE #define B TWO A AND B
+ONEANDTWO
+*/

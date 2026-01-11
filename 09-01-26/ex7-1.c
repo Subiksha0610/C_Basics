@@ -1,3 +1,5 @@
+/*Exercise 7-1. Write a program that converts upper case to lower or lower case to upper, 
+depending on the name it is invoked with, as found in argv[0]. */
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
@@ -32,3 +34,15 @@ int main(int argc, char *argv[]) {
 
     return 0;
 }
+/*output
+subiksha@DESKTOP-CBQDRR5:~$ gcc ex7-1.c -o lower
+subiksha@DESKTOP-CBQDRR5:~$ ./lower
+Hello
+hello
+HELLO WORLD
+hello world
+subiksha@DESKTOP-CBQDRR5:~$ gcc ex7-1.c -o upper
+subiksha@DESKTOP-CBQDRR5:~$ ./upper
+hello world
+HELLO WORLD
+*/

@@ -1,3 +1,5 @@
+/*Exercise 6-4. Write a program that prints the distinct words in its input sorted into decreasing 
+order of frequency of occurrence. Precede each word by its count.  */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -93,3 +95,29 @@ int main(void) {
     free(words);
     return 0;
 }
+/*output
+
+This is a test this is only a test
+   2 a
+   2 is
+   2 test
+   2 this
+   1 only
+
+Hello, hello! HELLO world world.
+   3 hello
+   2 world
+
+C programming in C is fun, fun, fun!!!
+   3 fun
+   2 c
+   1 in
+   1 is
+   1 programming
+
+Apple Apple Apple
+   3 apple
+
+123 !! @@ ##
+
+*/

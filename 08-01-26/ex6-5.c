@@ -1,3 +1,5 @@
+/*Exercise 6-5. Write a function undef that will remove a name and definition from the table 
+maintained by lookup and install. */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -112,3 +114,13 @@ int main(void) {
 
     return 0;
 }
+/*output
+Table after installs:
+PI -> 3.14159
+E -> 2.71828
+GOLDEN -> 1.61803
+
+Table after edge case operations:
+PI -> 3.14159
+GOLDEN -> 1.61803
+*/
