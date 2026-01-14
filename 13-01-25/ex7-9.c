@@ -1,3 +1,6 @@
+/*Exercise 7-9. Functions like isupper can be implemented to save space or to save time. 
+Explore both possibilities.  
+*/
 #include <stdio.h>
 #include <ctype.h>
 
@@ -42,3 +45,36 @@ int main(void) {
 
     return 0;
 }
+/*Testing characters:
+Char: 65
+  isupper_space: 1
+  isupper_time : 1
+  ctype isupper: 256
+Char: 122
+  isupper_space: 0
+  isupper_time : 0
+  ctype isupper: 0
+Char: 77
+  isupper_space: 1
+  isupper_time : 1
+  ctype isupper: 256
+Char: 57
+  isupper_space: 0
+  isupper_time : 0
+  ctype isupper: 0
+Char: 98
+  isupper_space: 0
+  isupper_time : 0
+  ctype isupper: 0
+Char: -1
+  isupper_space: 0
+  isupper_time : 0
+  ctype isupper: 0
+Char: -10
+  isupper_space: 0
+  isupper_time : 0
+  ctype isupper: 0
+Char: 200
+  isupper_space: 0
+  isupper_time : 0
+  ctype isupper: 0*/

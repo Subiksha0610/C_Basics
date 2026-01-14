@@ -1,3 +1,4 @@
+/*Exercise 7-6. Write a program to compare two files, printing the first line where they differ.  */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -59,3 +60,43 @@ int main(int argc, char *argv[]) {
     fclose(fp2);
     return 0;
 }
+/*output
+
+file1.txt
+Hello World
+
+file2.txt
+Hello World
+
+Files are identical.
+----------------------------------
+file1.txt
+Hello World c program
+
+file2.txt
+Hello World c language
+
+Files differ at line 3:
+File1: c program
+File2: c language
+--------------------------------------
+file1.txt
+Hello World c program
+
+file2.txt
+Hello World
+
+Files differ at line 3:
+File1: c program
+File2:
+-----------------------------------------
+file1.txt
+Hello World 
+
+file2.txt
+Hello World`````
+
+Files differ at line 2:
+File1: World
+File2: World`````
+*/
