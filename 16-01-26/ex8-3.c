@@ -1,3 +1,4 @@
+/*Exercise 8-3. Design and write _flushbuf, fflush, and fclose. */
 #include <stdio.h>
 #include <stdlib.h>
 #include <fcntl.h>
@@ -17,6 +18,7 @@ typedef struct _iobuf {
     int eof;
     int err;
 } FILEX;
+int fflushx(FILEX *fp);
 
 FILEX iob[OPEN_MAX];
 
@@ -195,3 +197,7 @@ int main(void) {
 
     return 0;
 }
+/*output
+subiksha@DESKTOP-CBQDRR5:~$ ./ex8-3
+Hello
+*/

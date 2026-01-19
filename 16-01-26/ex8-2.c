@@ -1,3 +1,5 @@
+/*Exercise 8-2. Rewrite fopen and _fillbuf with fields instead of explicit bit operations. 
+Compare code size and execution speed. */
 #include <stdio.h>
 #include <stdlib.h>
 #include <fcntl.h>
@@ -118,3 +120,8 @@ int main(void) {
 
     return 0;
 }
+/*output
+subiksha@DESKTOP-CBQDRR5:~$ ./ex8-2
+Hello
+K&R Chapter 8
+*/

@@ -1,3 +1,6 @@
+/*Exercise 8-8. Write a routine bfree(p,n) that will free any arbitrary block p of n characters 
+into the free list maintained by malloc and free. By using bfree, a user can add a static or 
+external array to the free list at any time. */
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -136,3 +139,15 @@ int main(void) {
 
     return 0;
 }
+/*output
+arr[0] = 0
+arr[1] = 2
+arr[2] = 4
+arr[3] = 6
+arr[4] = 8
+arr[5] = 10
+arr[6] = 12
+arr[7] = 14
+arr[8] = 16
+arr[9] = 18
+*/

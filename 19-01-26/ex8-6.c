@@ -1,7 +1,11 @@
+/*Exercise 8-6. The standard library function calloc(n,size) returns a pointer to n objects of 
+size size, with the storage initialized to zero. Write calloc, by calling malloc or by 
+modifying it. */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <limits.h>
+#include <stdint.h>
 
 void *mycalloc(size_t n, size_t size) {
     if (n == 0 || size == 0)
@@ -35,3 +39,10 @@ int main(void) {
     free(arr);
     return 0;
 }
+/*output
+arr[0] = 0
+arr[1] = 0
+arr[2] = 0
+arr[3] = 0
+arr[4] = 0
+*/

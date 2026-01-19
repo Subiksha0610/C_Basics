@@ -1,3 +1,8 @@
+/*Exercise 8-4. The standard library function  
+   int fseek(FILE *fp, long offset, int origin) 
+is identical to lseek except that fp is a file pointer instead of a file descriptor and return value 
+is an int status, not a position. Write fseek. Make sure that your fseek coordinates properly 
+with the buffering done for the other functions of the library.  */
 #include <stdio.h>
 #include <stdlib.h>
 #include <fcntl.h>
@@ -17,6 +22,7 @@ typedef struct _iobuf {
     int eof;
     int err;
 } FILEX;
+int fflushx(FILEX *fp);
 
 FILEX iob[OPEN_MAX];
 
@@ -226,3 +232,8 @@ int main(void) {
 
     return 0;
 }
+/*output
+subiksha@DESKTOP-CBQDRR5:~$ ./ex8-4
+This is a test.
+Another line
+*/
